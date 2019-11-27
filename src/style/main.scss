@@ -19,6 +19,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
+
+    
+    font-family: "Open Sans";
+    color: #808080;
 }
 
 @import 'layout';
@@ -26,3 +30,4 @@ body {
 @import 'auth/signin';
 @import 'auth/signup';
 @import "page-title";
+@import "form-fields";
