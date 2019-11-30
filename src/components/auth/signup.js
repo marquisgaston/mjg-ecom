@@ -9,8 +9,8 @@ import * as actions from '../../actions';
 class SignUp extends Component {
 
     componentDidMount() {
-        this.setHeaderLinks([]);
-        this.setNavbarLinks([]);
+        this.props.setHeaderLinks([]);
+        this.props.setNavbarLinks([]);
     }
 
     onSubmit = (fields) => {
