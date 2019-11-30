@@ -5,7 +5,7 @@ class PurchaseHistory extends Component {
     render() { 
         return ( 
             <div>
-                acconut info
+                <h1>account info</h1>
             </div>
          );
     }
