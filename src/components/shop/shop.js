@@ -17,8 +17,8 @@ class Shop extends Component {
         this.props.setHeaderLinks(headerLinks);
         this.props.fetchShopCategories();
 
-        // set header and navbar links
-          // fetch navbar links
+        this.props.fetchShopProducts();
+     
         // filter products
     }
 
@@ -26,7 +26,7 @@ class Shop extends Component {
         return ( 
             <div className='shop'>
                 <h1>Shop</h1>
-                {/* shiop search bar */}
+                {/* shop search bar */}
                 {/* shop products */}
                 {/* shop cart button */}
             </div>
