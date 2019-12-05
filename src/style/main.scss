@@ -27,11 +27,15 @@ body {
 
 @import 'layout';
 @import 'headernavbar';
-@import 'auth/signin';
-@import 'auth/signup';
 @import "page-title";
 @import "form-fields";
 @import 'details';
+// AUTH
+@import 'auth/signin';
+@import 'auth/signup';
+// ACCOUNT
 @import 'account/account-information';
 @import 'account/purchase-history';
 @import 'account/account';
+// SHOP
+@import 'shop/shop';
