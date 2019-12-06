@@ -13,31 +13,40 @@ class Shop extends Component {
                 path: '/signin'
             }
         ]
-
         this.props.setHeaderLinks(headerLinks);
         this.props.fetchShopCategories();
 
+        // filter products with links
         this.props.fetchShopProducts();
-     
-        // filter products
     }
 
-    render() { 
-        return ( 
+    shouldComponentUpdate(nextProps) {
+        if(this.props != nextProps) {
+            this.props.setNavbarLinks(nextProps.categories, (_id) => this.props.filterProductsWithCategoryId(_id));
+        }
+        return true
+
+    }
+
+    render() {
+
+        return (
             <div className='shop'>
-                <h1>Shop</h1>
                 {/* shop search bar */}
-                {/* shop products */}
+                {/* shop product */}
                 {/* shop cart button */}
             </div>
-         );
+        )
     }
 }
 
 function mapStateToProps(state) {
-    return { state }
+    const { categories } = state.shop;
+    return {
+        categories
+    } 
 }
 
 Shop = connect(mapStateToProps, actions)(Shop);
- 
+
 export default Shop;
