@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearchMinus } from '@fortawesome/free-solid-svg-icons';
 
 import { reduxForm, Field} from 'redux-form';
-import Shop from './shop';
 
 function FormSearchBar (props) {
     return (
@@ -19,9 +18,11 @@ class ShopSearchBar extends Component {
     render() {
         const { className, handleSubmit } = this.props; 
         return ( 
-            <form onSubmit={handleSubmit} className= {`${className} shop-search-bar`}>
+            <div>
+                      <form onSubmit={handleSubmit} className= {`${className} shop-search-bar`}>
                 <Field name='query' className='shop-search-bar__form-search-bar' placeholder='Search' component={FormSearchBar} />
             </form>
+            </div>
          );
     }
 }
