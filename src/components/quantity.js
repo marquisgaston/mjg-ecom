@@ -12,10 +12,10 @@ class Quantity extends Component {
                 <div className='quantity__count'>
                     {quantity}
                 </div>
-                <div className='quantity_plus'>
+                <div className='quantity__plus'>
                     <FontAwesomeIcon icon={faPlus} />
                 </div>
-                <div className='quantity_minus'>
+                <div className='quantity__minus'>
                     <FontAwesomeIcon icon={faMinus} />  
                 </div>
             </div>
