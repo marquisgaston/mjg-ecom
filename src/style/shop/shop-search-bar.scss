@@ -1,6 +1,5 @@
 .shop-search-bar {
     input {
-        color: #808080;
         font-size: 20px;
 
         height: 40px;
@@ -8,7 +7,9 @@
         border: 1px solid #E6E6E6;
         border-radius: 20px;
 
-        &::placeholder {            
+        color: #808080;
+
+        &::placeholder {
             color: #CCCCCC;
         }
 
@@ -20,21 +21,21 @@
 
 .search-bar-grid {
     display: grid;
-    grid-template-columns: [s] 1fr [e];
-    grid-template-rows: 20px [s] 20px [icon-e] 1fr [e];
+    grid-template-rows: 30px [s] 1fr [e];
+    grid-template-columns: 20px [s] 20px [icon-e] 1fr [e] 50px;
 
-    &__icon {
+     &__icon {
         grid-row: s/e;
         grid-column: s/icon-e;
-        font-size: 16px;
-        align-self: center;
+        font-size: 18px;
         z-index: 100;
-        padding-left: 12px;
-    }
-
-    &__input {
+        align-self: center;
+     }
+     
+     &__input {
         grid-row: s/e;
         grid-column: 1/e;
+
         padding-left: 50px;
-    }
+     }
 }
