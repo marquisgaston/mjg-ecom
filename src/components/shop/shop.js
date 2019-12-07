@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import ShopSearchBar from './shopsearchbar';
 
 class Shop extends Component {
 
     componentDidMount() {
-        console.log(this.props.products)
         const headerLinks = [
             {
                 _id: 0,
@@ -29,11 +29,15 @@ class Shop extends Component {
 
     }
 
+    onSubmit = (fields) => {
+        console.log(fields);
+    }
+
     render() {
 
         return (
             <div className='shop'>
-                shop search bar
+                <ShopSearchBar onSubmit={this.onSubmit} className='shop__search-bar'/>
                 <div className='shop__products'> {
                         this.props.filteredProducts.map(product => {
                             return (
