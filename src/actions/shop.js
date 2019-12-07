@@ -2,7 +2,9 @@ import {
     SET_SHOP_CATEGORIES,
     SET_NAVBAR_LINKS,
     SET_SHOP_PRODUCTS,
-    FILTER_PRODUCTS_WITH_CATEGORY_ID
+    FILTER_PRODUCTS_WITH_CATEGORY_ID,
+    FILTER_PRODCUTS_WITH_QUERY
+
 } from './types';
 
 export function filterProductsWithCategoryId(_id) {
@@ -104,5 +106,12 @@ export function fetchShopProducts() {
                 belongsTo: [0, 6]
             },
         ]
+    })
+}
+
+export function filterProductsWithQuery (fields) {
+    return ({
+        type: FILTER_PRODCUTS_WITH_QUERY,
+        payload: fields
     })
 }
