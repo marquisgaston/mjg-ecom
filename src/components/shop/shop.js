@@ -2,10 +2,19 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
-import ShopSearchBar from './shopsearchbar';
+import ShopSearchBar from './shopSearchBar';
 import ShopProduct from './shopProduct';
+import ShopCart from './shopCart';
 
 class Shop extends Component {
+
+    constructor() {
+        super()
+
+        this.state = {
+            showCart: true
+        }
+    }
 
     componentDidMount() {
         const headerLinks = [
@@ -27,19 +36,20 @@ class Shop extends Component {
             this.props.setNavbarLinks(nextProps.categories, (_id) => this.props.filterProductsWithCategoryId(_id));
         }
         return true
-
     }
 
     onSubmit = (fields) => {
-        this.props.filterProductsWithQuery(fields);
+        this.props.filterProductsWithQuery(fields)
     }
 
     render() {
+        //return <ShopCart className='shop__cart'/>
 
         return (
             <div className='shop'>
                 <ShopSearchBar onSubmit={this.onSubmit} className='shop__search-bar'/>
-                <div className='shop__products'> {
+                <div className='shop__products'>
+                    {
                         this.props.filteredProducts.map(product => {
                             return (
                                 <ShopProduct {...product} key={product._id} />
@@ -47,6 +57,10 @@ class Shop extends Component {
                         })
                     }
                 </div>
+                {
+                    this.state.showCart ? <ShopCart className='shop__cart'/> : ''
+                }
+                
                 {/* shop cart button */}
             </div>
         )
@@ -56,7 +70,7 @@ class Shop extends Component {
 function mapStateToProps(state) {
     const { categories, filteredProducts } = state.shop;
     return {
-        categories, 
+        categories,
         filteredProducts
     } 
 }
